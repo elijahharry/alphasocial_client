@@ -26,6 +26,10 @@ export default makeStyles((theme) => ({
     "& img": {
       transition: "filter 300ms",
     },
+    "& div": {
+      borderRadius: "50%",
+      overflow: "hidden !important",
+    },
     boxShadow: theme.shadows[3],
     marginBottom: theme.spacing(0.4),
   },
