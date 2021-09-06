@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       position: "relative",
-      marginBottom: theme.spacing(5),
+      marginBottom: theme.spacing(2),
     },
   },
   service_1: {
@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
     left: 10,
     [theme.breakpoints.down("sm")]: {
       transform: "translateY(0)",
+      left: "-12%",
     },
   },
   service_2: {
@@ -27,6 +28,7 @@ export default makeStyles((theme) => ({
     left: 30,
     [theme.breakpoints.down("sm")]: {
       transform: "translateY(0)",
+      left: "10%",
     },
   },
   service_3: {
@@ -34,6 +36,7 @@ export default makeStyles((theme) => ({
     right: 30,
     [theme.breakpoints.down("sm")]: {
       transform: "translateY(0)",
+      right: "10%",
     },
   },
   service_4: {
@@ -41,6 +44,7 @@ export default makeStyles((theme) => ({
     right: 10,
     [theme.breakpoints.down("sm")]: {
       transform: "translateY(0)",
+      right: "-14%",
     },
   },
   img: {

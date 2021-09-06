@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     alignItems: "flex-end",
     transform: "scale(.9) translateY(11.5%)",
     [theme.breakpoints.down("xs")]: {
-      transform: "scale(.9) translateY(9%)",
+      transform: "scale(.9) translateY(11%)",
     },
   },
   img: {

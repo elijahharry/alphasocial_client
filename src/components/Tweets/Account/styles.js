@@ -41,6 +41,13 @@ export default makeStyles((theme) => ({
         filter: "grayscale(70%) blur(1px)",
       },
     },
+    [theme.breakpoints.down("sm")]: {
+      opacity: 0.5,
+      transform: "scale(1)",
+      "&:hover": {
+        transform: "scale(1)",
+      },
+    },
   },
   account_selected: {
     "& img": {
@@ -50,6 +57,12 @@ export default makeStyles((theme) => ({
     transform: "scale(1.02)",
     "&:hover": {
       transform: "scale(1.1)",
+    },
+    [theme.breakpoints.down("sm")]: {
+      transform: "scale(1)",
+      "&:hover": {
+        transform: "scale(1)",
+      },
     },
   },
   followers: {

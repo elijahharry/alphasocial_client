@@ -96,16 +96,16 @@ const useStyles = makeStyles(() =>
       ".MuiButton-containedSecondary": {
         background: theme.palette.secondary,
         background: `linear-gradient(20deg, ${theme.palette.secondary.main} 20%, ${theme.palette.primary.light} 100%)`,
-        color: "#fff",
+        color: "#fff !important",
       },
       ".MuiButton-containedPrimary": {
         background: theme.palette.primary,
         // background: `linear-gradient(20deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
-        color: "#fff",
+        color: "#fff !important",
         background: `linear-gradient(20deg, ${theme.palette.primary.main} 20%, ${theme.palette.secondary.light} 100%)`,
       },
       ".MuiChip-colorSecondary": {
-        color: "#fff",
+        color: "#fff !important",
       },
     },
   })

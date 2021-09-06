@@ -10,8 +10,6 @@ import CTA from "@component/CTA/CTA";
 import { Container } from "@material-ui/core";
 
 export default function Index({ tweets, accounts }) {
-  console.log(tweets);
-
   return (
     <MainWrap>
       <Feature
@@ -38,6 +36,7 @@ export default function Index({ tweets, accounts }) {
       <CTA
         text="No other agency with more experience creating humorous and informative finance content."
         link="#creds"
+        remove_at={1050}
       />
       <Feature
         media={{}}
@@ -108,7 +107,7 @@ export default function Index({ tweets, accounts }) {
 export async function getStaticProps() {
   const { tweets: tweets, accounts: accounts } = await api.getTopTweets();
   return {
-    revalidate: 1800,
+    revalidate: 7200,
     props: { tweets: tweets, accounts: accounts },
   };
 }
