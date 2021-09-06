@@ -6,6 +6,9 @@ const theme = Storkies;
 const useStyles = makeStyles(() =>
   createStyles({
     "@global": {
+      html: {
+        scrollBehavior: "smooth",
+      },
       a: {
         textDecoration: "none",
       },

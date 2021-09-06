@@ -6,9 +6,22 @@ export default makeStyles((theme) => ({
     position: "relative",
     paddingTop: theme.spacing(4),
   },
+  section_full: {
+    height: "calc(100vh - 163px)",
+    paddingBottom: theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+    },
+  },
   container: {
     position: "relative",
     zIndex: 2,
+  },
+  con_full: {
+    height: "100%",
+  },
+  grid_full: {
+    height: "100%",
   },
   section_top: {
     padding: `${theme.spacing(7)}px 0`,
@@ -16,7 +29,11 @@ export default makeStyles((theme) => ({
   text_col: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text_col_full: {
+    height: "100%",
   },
   col_left: {
     textAlign: "left",
@@ -64,6 +81,10 @@ export default makeStyles((theme) => ({
       height: "100vw",
       marginBottom: -5,
     },
+  },
+  contact_col: {
+    position: "relative",
+    height: 580,
   },
   service_col: {
     position: "relative",

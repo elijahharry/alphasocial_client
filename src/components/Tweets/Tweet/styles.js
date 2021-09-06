@@ -88,8 +88,8 @@ export default makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
     marginTop: theme.spacing(0.5),
   },
   tweet_desc: {
@@ -139,11 +139,16 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   retweet_icon: {},
-  full_link: {
+  twit_link: {
     paddingTop: 2,
     paddingBottom: 2,
     letterSpacing: 1,
     fontWeight: 700,
-    marginBottom: 2,
+    "& svg": {
+      marginLeft: theme.spacing(0.7),
+    },
+  },
+  likes_retweets: {
+    display: "flex",
   },
 }));

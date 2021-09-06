@@ -4,6 +4,7 @@ export default makeStyles((theme) => ({
   section: {
     position: "relative",
     zIndex: 5,
+    overflow: "hidden",
   },
   container: {
     position: "relative",
@@ -150,5 +151,15 @@ export default makeStyles((theme) => ({
   },
   case_studies: {
     marginTop: theme.spacing(2),
+  },
+  shadow: {
+    width: "100%",
+    height: 0,
+    bottom: 0,
+    left: 0,
+    position: "absolute",
+    zIndex: 10,
+    borderRadius: 20,
+    boxShadow: theme.shadows[7],
   },
 }));

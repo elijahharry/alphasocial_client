@@ -22,6 +22,8 @@ const Service = ({ service, index }) => {
           height={140}
           objectFit="cover"
           objectPosition="center"
+          placeholder={service?.blur ? "blur" : "empty"}
+          blurDataURL={service?.blur ? service.blur : ""}
         />
       </div>
       <div className={classes.blob}>

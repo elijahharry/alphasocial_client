@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import parse from "html-react-parser";
 import StackedImgs from "./StackedImgs/StackedImgs";
+import Form from "@component/Form/Form";
 
 import Retweet from "@component/Svgs/Retweet";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -35,6 +37,11 @@ const Feature = ({
   icons,
   border,
   services,
+  id,
+  full,
+  contact,
+  button1,
+  button2,
 }) => {
   const classes = useStyles();
   const gradients = useGradients();
@@ -59,13 +66,24 @@ const Feature = ({
   }
 
   return (
-    <section className={`${classes.section} ${top && classes.section_top} `}>
-      <Container maxWidth="lg" className={`${classes.container}`}>
+    <section
+      id={id ? id : ""}
+      key={id ? "feature-" + id : "feature"}
+      className={`${classes.section} ${top && classes.section_top} ${
+        full && classes.section_full
+      }`}
+    >
+      <Container
+        maxWidth="lg"
+        className={`${classes.container} ${full && classes.con_full}`}
+      >
         <Grid
           container
           alignItems="center"
           justifyContent="center"
-          className={`${flipped ? classes.flipped : classes.normal} `}
+          className={`${flipped ? classes.flipped : classes.normal} ${
+            full && classes.grid_full
+          }`}
         >
           <Grid
             item
@@ -75,7 +93,7 @@ const Feature = ({
               centered ? classes.col_center : classes.col_left
             } ${dark ? classes.dark : classes.light} ${
               flipped ? classes.padding_left : classes.padding_right
-            }`}
+            } ${full && classes.text_col_full}`}
           >
             <Typography
               variant="overline"
@@ -99,24 +117,38 @@ const Feature = ({
               {parse(desc)}
             </Typography>
             <div className={classes.buttons}>
-              <Button
-                variant="contained"
-                color={muiColor}
-                size="large"
-                className={classes.button_1}
-              >
-                Learn more
-              </Button>
-              <Button variant="outlined" color="inherit" size="large">
-                Learn more
-              </Button>
+              {button1 && (
+                <Link href={button1.link} passHref>
+                  <Button
+                    variant="contained"
+                    color={muiColor}
+                    size="large"
+                    className={classes.button_1}
+                  >
+                    {button1?.text}
+                  </Button>
+                </Link>
+              )}
+              {button2 && (
+                <Link href={button2.link} passHref>
+                  <Button variant="outlined" color="inherit" size="large">
+                    {button2.text}{" "}
+                  </Button>
+                </Link>
+              )}
             </div>
           </Grid>
           <Grid
             item
             xs={centered ? false : 12}
             md={centered ? false : 6}
-            className={`${services ? classes.service_col : classes.img_col}`}
+            className={`${
+              services
+                ? classes.service_col
+                : contact
+                ? classes.contact_col
+                : classes.img_col
+            }`}
           >
             {media?.stacked && <StackedImgs imgs={media.stacked} />}
             {media?.float && (
@@ -155,6 +187,7 @@ const Feature = ({
                 </div>
               </>
             )}
+            {contact && <Form />}
           </Grid>
         </Grid>
         {border && (

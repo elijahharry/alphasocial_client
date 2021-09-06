@@ -52,7 +52,8 @@ export default makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     position: "relative",
     zIndex: 1,
-    boxShadow: theme.shadows[2],
+    boxShadow: theme.shadows[5],
+    border: `4px solid ${theme.palette.secondary.main}`,
   },
   blob: {
     height: 140,
@@ -63,6 +64,7 @@ export default makeStyles((theme) => ({
     borderRadius: "50%",
     overflow: "hidden",
     zIndex: 0,
+    animation: "$blob-animate 8s infinite",
   },
   text: {
     fontWeight: 700,

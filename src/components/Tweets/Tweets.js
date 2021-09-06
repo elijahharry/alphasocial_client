@@ -95,12 +95,20 @@ const Tweets = ({ tweets, accounts }) => {
         <Grid container>
           <Grid item xs={12} md={6}>
             {tweetsColumn1.map((tweet, index) => (
-              <Tweet tweet={tweet} even={index % 2 === 0} />
+              <Tweet
+                tweet={tweet}
+                even={index % 2 === 0}
+                key={tweet?.id + "-tweet"}
+              />
             ))}
           </Grid>
           <Grid item xs={12} md={6}>
             {tweetsColumn2.map((tweet, index) => (
-              <Tweet tweet={tweet} even={index % 2 !== 0} />
+              <Tweet
+                tweet={tweet}
+                even={index % 2 !== 0}
+                key={tweet?.id + "-tweet"}
+              />
             ))}
           </Grid>
         </Grid>
@@ -109,7 +117,11 @@ const Tweets = ({ tweets, accounts }) => {
         <Grid container>
           <Grid item xs={12} sm={12}>
             {filteredTweets.map((tweet, index) => (
-              <Tweet tweet={tweet} even={index % 2 === 0} />
+              <Tweet
+                tweet={tweet}
+                even={index % 2 === 0}
+                key={tweet?.id + "-tweet"}
+              />
             ))}
           </Grid>
         </Grid>

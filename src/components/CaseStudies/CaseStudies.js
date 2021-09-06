@@ -14,7 +14,7 @@ const CaseStudies = () => {
   const gradients = useGradients();
   const colors = useColors();
   return (
-    <section className={`padding ${classes.section}`}>
+    <section className={`padding ${classes.section}`} id="case-studies">
       <Container maxWidth="lg" className={classes.container}>
         <Typography
           variant="overline"
@@ -53,7 +53,13 @@ const CaseStudies = () => {
           <Grid item xs={12} md={6} className={classes.col_1}>
             <div className={classes.casestudy}>
               <div className={classes.media}>
-                <Image src="/img/trade.jpg" layout="fill" objectFit="cover" />
+                <Image
+                  src="/img/trade.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAAwICAgICAwICAgMDAwMEBgQEBAQECAYGBQYJCAoKCQgJCQoMDwwKCw4LCQkNEQ0ODxAQERAKDBITEhATDxAQEP/bAEMBAwMDBAMECAQECBALCQsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEP/AABEIAAUABwMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAACP/EACAQAAIBBAEFAAAAAAAAAAAAAAIEAQADERIFBgcIIkH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAAMAAwAAAAAAAAAAAAAAAAABAgMhMf/aAAwDAQACEQMRAD8AlPmvKTu2HUDTTPNi7Ct01lLTQbQqsMyIWrZjrdH5kt9ix7TOS2UpVVRLp6Qc5LS6f//Z"
+                />
                 <div className={classes.text_overlay}>
                   <Typography variant="overline" className={classes.title}>
                     Case study A
@@ -108,7 +114,13 @@ const CaseStudies = () => {
           <Grid item xs={12} md={6} className={classes.col_2}>
             <div className={classes.casestudy}>
               <div className={classes.media}>
-                <Image src="/img/finance.jpg" layout="fill" objectFit="cover" />
+                <Image
+                  src="/img/finance.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAAwICAgICAwICAgMDAwMEBgQEBAQECAYGBQYJCAoKCQgJCQoMDwwKCw4LCQkNEQ0ODxAQERAKDBITEhATDxAQEP/bAEMBAwMDBAMECAQECBALCQsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEP/AABEIAAUABwMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//EACEQAAEDAwQDAAAAAAAAAAAAAAEAAgMEBQYHERMiEiEx/8QAFAEBAAAAAAAAAAAAAAAAAAAABf/EABcRAAMBAAAAAAAAAAAAAAAAAAABAiH/2gAMAwEAAhEDEQA/AKRoxZrbYMPxqulpW1dXdRI/lEkkGzGxDjbII3AzFrOvk4/e2wPpERMSgenp/9k="
+                />
                 <div className={classes.text_overlay}>
                   <Typography variant="overline" className={classes.title}>
                     Case study B
@@ -178,6 +190,7 @@ const CaseStudies = () => {
         </Grid>
       </Container>
       <div className={`backdrop`} style={{ zIndex: 0, opacity: 0.9 }} />
+      <div className={`${classes.shadow} ${gradients.grey}`} />
     </section>
   );
 };
