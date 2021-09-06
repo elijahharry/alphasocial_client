@@ -1,0 +1,39 @@
+.skeleton {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-color: rgb(226, 226, 226);
+  overflow: hidden;
+  position: absolute;
+  transition: transform 200ms, opacity 1s;
+}
+.skeleton::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  animation: skeleton-wave 800ms linear 800ms infinite;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(39, 39, 39, 0.1),
+    transparent
+  );
+}
+@keyframes skeleton-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skeleton-hide {
+  transform: translateX(110%);
+}
