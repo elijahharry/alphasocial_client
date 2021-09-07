@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     left: 0,
     height: "100%",
     width: "100%",
-    zIndex: 50,
+    zIndex: 200,
     backdropFilter: "blur(10px) brightness(85%)",
     display: "flex",
     alignItems: "center",

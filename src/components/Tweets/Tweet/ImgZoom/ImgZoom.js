@@ -12,9 +12,15 @@ const ImgZoom = ({ show, img, setShow }) => {
         setShow(false);
       }
     };
+    const exit = () => {
+      setShow(false);
+    };
     document.addEventListener("keydown", exitOnEsc, false);
+    document.addEventListener("scroll", exit, false);
+
     return () => {
       document.removeEventListener("keydown", exitOnEsc, false);
+      document.removeEventListener("scroll", exit, false);
     };
   }, []);
 
