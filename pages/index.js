@@ -107,7 +107,7 @@ export default function Index({ tweets, accounts }) {
 export async function getStaticProps() {
   const { tweets: tweets, accounts: accounts } = await api.getTopTweets();
   return {
-    revalidate: 7200,
+    revalidate: 30,
     props: { tweets: tweets, accounts: accounts },
   };
 }
