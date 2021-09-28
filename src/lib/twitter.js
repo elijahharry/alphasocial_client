@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getPlaiceholder } from "plaiceholder";
 
 const fetchTweets = (id) => axios.get(`${process.env.BACKEND}/tweets?id=${id}`);
 
@@ -16,7 +17,40 @@ export const getTopTweets = async () => {
       ...watchoutshorts,
       ...stonkmarketnews,
     ];
-    const sorted = combined.sort((a, b) => {
+    let promises = [];
+    combined.map((tweet) => {
+      const promise = new Promise(async (resolve) => {
+        if (tweet.media) {
+          try {
+            const { css, img } = await getPlaiceholder(tweet.media);
+            resolve({ ...tweet, media: { blur: css, src: img.src } });
+          } catch {
+            resolve({ ...tweet });
+          }
+        } else if (tweet.url) {
+          try {
+            const { css, img } = await getPlaiceholder(
+              `${process.env.BACKEND}${tweet.url.media}`
+            );
+            resolve({
+              ...tweet,
+              url: {
+                url: tweet.url?.url,
+                title: tweet.url?.title,
+                media: { blur: css, src: img.src },
+              },
+            });
+          } catch {
+            resolve({ ...tweet });
+          }
+        } else {
+          resolve({ ...tweet });
+        }
+      });
+      promises.push(promise);
+    });
+    const withBlurs = await Promise.all(promises);
+    const sorted = withBlurs.sort((a, b) => {
       return b.favorites - a.favorites;
     });
     const accountsRaw = sorted.map((tweet) => tweet.user);

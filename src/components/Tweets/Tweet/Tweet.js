@@ -76,25 +76,24 @@ const Tweet = ({ tweet, even }) => {
             <Typography variant="body2" className={classes.tweet_desc}>
               {content}
             </Typography>
-            {(tweet.media || tweet.url) && (
+            {(tweet.media || tweet.url?.media) && (
               <div
                 className={classes.tweet_pic}
                 onClick={() => setImgZoom(true)}
+                style={
+                  tweet.media
+                    ? { ...tweet.media.blur }
+                    : { ...tweet.url.media.blur }
+                }
               >
                 <Image
-                  src={
-                    tweet.media
-                      ? tweet.media
-                      : `${process.env.BACKEND}${tweet.url.media}`
-                  }
+                  src={tweet.media ? tweet.media.src : tweet.url.media.src}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="top"
                   onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
+                  className={classes.pic_img}
                 />
-                {!loaded.media && (
-                  <div className="skeleton" style={{ zIndex: 2 }} />
-                )}
               </div>
             )}
             {/* {!tweet.media && tweet.url && (

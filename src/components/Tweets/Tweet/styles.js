@@ -151,4 +151,7 @@ export default makeStyles((theme) => ({
   likes_retweets: {
     display: "flex",
   },
+  pic_img: {
+    backdropFilter: "blur(40px)",
+  },
 }));
