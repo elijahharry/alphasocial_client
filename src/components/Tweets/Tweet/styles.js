@@ -153,12 +153,13 @@ export default makeStyles((theme) => ({
   },
   pic_img: {
     backdropFilter: "blur(40px)",
+    position: "relative",
+    zIndex: 1,
   },
   default_img: {
     objectFit: "cover",
     width: "100%",
     maxWidth: "100%",
-    backdropFilter: "blur(40px)",
     position: "relative",
     zIndex: 1,
   },

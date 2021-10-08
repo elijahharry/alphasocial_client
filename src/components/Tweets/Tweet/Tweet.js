@@ -86,15 +86,15 @@ const Tweet = ({ tweet, even }) => {
                     : { ...tweet.url.media.blur }
                 }
               >
-                {/* <Image
+                <Image
                   src={tweet.media ? tweet.media.src : tweet.url.media.src}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="top"
                   onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
                   className={classes.pic_img}
-                /> */}
-                <div className={classes.img_blur} />
+                />
+                {/* <div className={classes.img_blur} /> */}
                 <img
                   src={tweet.media ? tweet.media.src : tweet.url.media.src}
                   className={classes.default_img}
