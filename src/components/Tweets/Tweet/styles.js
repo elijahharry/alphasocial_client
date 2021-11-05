@@ -58,6 +58,10 @@ export default makeStyles((theme) => ({
     overflow: "hidden",
     border: `1px solid #D3D3D3`,
     cursor: "zoom-in",
+    "& div": {
+      width: "100% !important",
+      height: "100% !important",
+    },
     "& img": {
       zIndex: 0,
     },

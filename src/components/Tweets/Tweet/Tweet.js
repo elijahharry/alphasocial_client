@@ -88,9 +88,11 @@ const Tweet = ({ tweet, even }) => {
               >
                 <Image
                   src={tweet.media ? tweet.media.src : tweet.url.media.src}
-                  layout="fill"
+                  // layout="fill"
+                  width={400}
+                  height={300}
                   objectFit="cover"
-                  objectPosition="top"
+                  objectPosition="center"
                   onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
                   className={classes.pic_img}
                 />
