@@ -15,6 +15,14 @@ const useStyles = makeStyles(() =>
       ".grey": {
         backgroundColor: "#fcfcfc",
       },
+      ".no-select": {
+        WebkitTouchCallout: "none",
+        WebkitUserSelect: "none",
+        KhtmlUserSelect: "none",
+        MozUserSelect: "none",
+        msUserSelect: "none",
+        userSelect: "none",
+      },
       ".img-skeleton": {
         width: "100%",
         height: "100%",

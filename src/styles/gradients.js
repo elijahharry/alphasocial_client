@@ -13,6 +13,10 @@ export default makeStyles((theme) => ({
     background: theme.palette.primary,
     background: `linear-gradient(250deg, ${theme.palette.primary.dark} 0%, ${theme.palette.secondary.main} 100%)`,
   },
+  both_offwhite: {
+    background: theme.palette.secondary.offwhite,
+    background: `linear-gradient(250deg, ${theme.palette.primary.offwhite} 0%, ${theme.palette.secondary.offwhite} 90%)`,
+  },
   both_flipped: {
     background: theme.palette.primary,
     background: `linear-gradient(250deg, ${theme.palette.secondary.main} 0%, ${theme.palette.primary.main} 90%)`,

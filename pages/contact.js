@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 
 export default function ContactPage() {
   return (
-    <MainWrap>
+    <MainWrap head={{ title: "Contact Us" }}>
       <Feature
         overline="Connect with your audience"
         title="Contact Us <span>Today</span>"

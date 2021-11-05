@@ -9,8 +9,9 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="lg">
-        <Typography variant="h6">
+      <Container maxWidth="lg" className={classes.container}>
+        <img src="/img/logo.svg" className={classes.logo} />
+        <Typography variant="body2">
           Alpha Social Group. © {date}, All Rights Reserved.
         </Typography>
       </Container>

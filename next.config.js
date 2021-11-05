@@ -5,6 +5,11 @@ module.exports = {
     CONTACT_FORM_7_FORM_ID: process.env.CF7_FORM_ID,
   },
   images: {
-    domains: ["pbs.twimg.com", process.env.BACKEND_DOMAIN, "localhost"],
+    domains: [
+      "pbs.twimg.com",
+      process.env.BACKEND_DOMAIN,
+      process.env.WORDPRESS_DOMAIN,
+      "localhost",
+    ],
   },
 };

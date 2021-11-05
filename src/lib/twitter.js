@@ -1,22 +1,18 @@
 import axios from "axios";
 import { getPlaiceholder } from "plaiceholder";
 
-const fetchTweets = (id) => axios.get(`${process.env.BACKEND}/tweets?id=${id}`);
+const fetchTweets = (id) => axios.get(`${process.env.BACKEND}/tweets`);
 
 export const getTopTweets = async () => {
   try {
-    const { data: cokedupoptions } = await fetchTweets("cokedupoptions");
-    const { data: thestinkmarket } = await fetchTweets("thestinkmarket");
-    const { data: redditinvestors } = await fetchTweets("redditinvestors");
-    const { data: watchoutshorts } = await fetchTweets("watchoutshorts");
-    const { data: stonkmarketnews } = await fetchTweets("stonkmarketnews");
-    const combined = [
-      ...cokedupoptions,
-      ...thestinkmarket,
-      ...redditinvestors,
-      ...watchoutshorts,
-      ...stonkmarketnews,
-    ];
+    const { data } = await fetchTweets();
+    let combined = [];
+    data.map((account) => {
+      account.tweets.map((tweet) => combined.push(tweet));
+    });
+
+    console.log(combined);
+
     let promises = [];
     combined.map((tweet) => {
       const promise = new Promise(async (resolve) => {

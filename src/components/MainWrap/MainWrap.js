@@ -1,11 +1,11 @@
-import Head from "@component/Head/Head";
+import Head from "./Head/Head";
 import Nav from "./Nav/Nav";
 import Footer from "./Footer/Footer";
 
-const MainWrap = ({ children }) => {
+const MainWrap = ({ head, children }) => {
   return (
     <>
-      <Head />
+      <Head title={head?.title} desc={head?.desc} />
       <Nav />
       <main>{children}</main>
       <Footer />
