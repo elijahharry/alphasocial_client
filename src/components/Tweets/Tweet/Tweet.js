@@ -73,9 +73,11 @@ const Tweet = ({ tweet, even }) => {
                 @{tweet.user.handle}
               </Typography>
             </a>
-            <Typography variant="body2" className={classes.tweet_desc}>
-              {content}
-            </Typography>
+            <Typography
+              variant="body2"
+              className={classes.tweet_desc}
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
             {(tweet.media || tweet.url?.media) && (
               <div
                 className={classes.tweet_pic}
