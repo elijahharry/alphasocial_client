@@ -88,39 +88,16 @@ const Tweet = ({ tweet, even }) => {
               >
                 <Image
                   src={tweet.media ? tweet.media.src : tweet.url.media.src}
-                  // layout="fill"
                   width={400}
                   height={300}
                   objectFit="cover"
                   objectPosition="center"
                   onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
                   className={classes.pic_img}
+                  quality={50}
                 />
               </div>
             )}
-            {/* {!tweet.media && tweet.url && (
-              <div
-                className={classes.tweet_pic}
-                onClick={() => setImgZoom(true)}
-              >
-                <Image
-                  src={`${process.env.BACKEND}${tweet.url.media}`}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
-                />
-                {!loaded.media && (
-                  <div className="skeleton" style={{ zIndex: 2 }} />
-                )}
-                <div className={classes.url_title}>
-                  <Typography variant="body2">
-                    <InfoIcon />
-                    {tweet.url.title}
-                  </Typography>
-                </div>
-              </div>
-            )} */}
             <div className={classes.tweet_stats}>
               <div className={classes.likes_retweets}>
                 <div className={classes.tweet_stats__item}>
