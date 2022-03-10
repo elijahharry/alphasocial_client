@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FaLinkedinIn, AiOutlineTwitter } from "react-icons/all";
+import { FaLinkedin } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 import { makeStyles, ThemeProvider, Typography } from "@material-ui/core";
 
@@ -27,7 +28,7 @@ const Author = ({ author }) => {
             {firstName} {lastName}
           </Typography>
           {socials?.linkedIn && (
-            <Link url={socials.linkedIn} icon={<FaLinkedinIn />} />
+            <Link url={socials.linkedIn} icon={<FaLinkedin />} />
           )}
           {socials?.twitter && (
             <Link url={socials.twitter} icon={<AiOutlineTwitter />} />
