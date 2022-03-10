@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScreenSize } from "@context/ScreenSize";
+import Image from "next/image";
 
 import { Typography, Chip, SvgIcon, Button } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
@@ -78,24 +78,16 @@ const Tweet = ({ tweet, even }) => {
               className={classes.tweet_desc}
               dangerouslySetInnerHTML={{ __html: content }}
             />
-            {(tweet.media || tweet.url?.media) && (
-              <div
-                className={classes.tweet_pic}
-                onClick={() => setImgZoom(true)}
-                style={
-                  tweet.media
-                    ? { ...tweet.media.blur }
-                    : { ...tweet.url.media.blur }
-                }
-              >
-                <Image
-                  src={tweet.media ? tweet.media.src : tweet.url.media.src}
-                  width={400}
-                  height={300}
-                  objectFit="cover"
-                  objectPosition="center"
+            {tweet.media && (
+              <div className={classes.pic_ctn} onClick={() => setImgZoom(true)}>
+                <span
+                  className={classes.pic_blur}
+                  style={tweet?.media?.blur ? { ...tweet.media.blur } : {}}
+                />
+                <img
+                  src={tweet.media.src}
                   onLoad={() => setLoaded({ ...loaded, ["media"]: true })}
-                  className={classes.pic_img}
+                  className={classes.pic_src}
                   quality={50}
                 />
               </div>

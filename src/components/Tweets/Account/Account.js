@@ -10,7 +10,6 @@ const Account = ({ total, account, filter, setFilter }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    console.log("runs");
     if (filter === account.handle || filter === "") {
       setSelected(true);
     } else {
@@ -23,7 +22,7 @@ const Account = ({ total, account, filter, setFilter }) => {
       className={`${classes.account} } ${
         selected ? classes.account_selected : classes.account_unselected
       }`}
-      style={{ flexBasis: `${(1 / total) * 100}%` }}
+      // style={{ flexBasis: `${(1 / total) * 100}%` }}
       onClick={() => setFilter(account.handle)}
     >
       <div className={classes.account_img}>

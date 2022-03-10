@@ -51,9 +51,7 @@ export default makeStyles((theme) => ({
     margin: `${theme.spacing(3)}px 0`,
     width: "100%",
     justifyContent: "center",
-    [theme.breakpoints.down("sm")]: {
-      flexWrap: "wrap",
-    },
+    flexWrap: "wrap",
   },
   filter_row: {
     height: 32,

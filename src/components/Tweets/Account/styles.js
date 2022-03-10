@@ -9,13 +9,14 @@ export default makeStyles((theme) => ({
     minHeight: 100,
     cursor: "pointer",
     transition: "opacity 300ms, transform 300ms",
-    margin: `${theme.spacing(1)}px 0`,
-    [theme.breakpoints.down("sm")]: {
-      flexBasis: "33% !important",
-    },
-    [theme.breakpoints.down("xs")]: {
-      flexBasis: "50% !important",
-    },
+    // margin: `${theme.spacing(1)}px 0`,
+    padding: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
+    // [theme.breakpoints.down("sm")]: {
+    //   flexBasis: "33% !important",
+    // },
+    // [theme.breakpoints.down("xs")]: {
+    //   flexBasis: "50% !important",
+    // },
   },
   account_img: {
     position: "relative",

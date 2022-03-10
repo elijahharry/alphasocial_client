@@ -11,6 +11,7 @@ const useStyles = makeStyles(() =>
       },
       a: {
         textDecoration: "none",
+        color: theme.palette.text.primary,
       },
       ".grey": {
         backgroundColor: "#fcfcfc",

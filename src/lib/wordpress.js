@@ -73,6 +73,12 @@ export const fetchPost = async (slug) => {
                             firstName
                             lastName
                             description
+                            seo {
+                              social {
+                                linkedIn
+                                twitter
+                              }
+                            }
                             avatar {
                               url
                             }

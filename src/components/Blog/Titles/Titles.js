@@ -47,8 +47,8 @@ export default Titles;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    backgroundColor: theme.palette.secondary.offwhite,
-
+    // backgroundColor: theme.palette.secondary.offwhite,
+    // backgroundColor: "rgba(0,0,0,.03)",
     overflow: "hidden",
     position: "relative",
   },

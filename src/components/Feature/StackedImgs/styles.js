@@ -20,33 +20,33 @@ export default makeStyles((theme) => ({
     position: "absolute",
     zIndex: 1,
     alignItems: "flex-end",
-    "& div": {
+    "& span": {
       borderRadius: 20,
       transition: "box-shadow 500ms",
     },
   },
   main: {
     zIndex: 2,
-    "& div": {
-      boxShadow: theme.shadows[4],
+    "& span": {
+      boxShadow: `${theme.shadows[3]}, ${theme.shadows[2]}`,
     },
   },
   behind: {
     zIndex: 1,
-    "& div": {
-      boxShadow: theme.shadows[2],
+    "& span": {
+      boxShadow: `${theme.shadows[2]}`,
     },
   },
   removing: {
     zIndex: 3,
-    "& div": {
-      boxShadow: theme.shadows[6],
+    "& span": {
+      boxShadow: `${theme.shadows[3]}`,
     },
   },
   offpage: {
     zIndex: 0,
-    "& div": {
-      boxShadow: theme.shadows[6],
+    "& span": {
+      boxShadow: `${theme.shadows[1]}`,
     },
   },
 }));

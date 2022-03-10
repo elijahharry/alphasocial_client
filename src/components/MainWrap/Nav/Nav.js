@@ -14,7 +14,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className={classes.nav}>
+      <nav id="nav" className={classes.nav}>
         <Container maxWidth="lg" className={classes.container}>
           <Link href="/" passHref>
             <a className={classes.brand}>
@@ -89,8 +89,8 @@ const Nav = () => {
 export default Nav;
 
 const links = [
-  { text: "about", link: "/#about" },
-  { text: "Case studies", link: "/#case-studies" },
+  { text: "About", link: "/#about" },
+  { text: "Work", link: "/#case-studies" },
   { text: "Services", link: "/#services" },
   { text: "Tweets", link: "/#tweets" },
   { text: "Contact", link: "/contact" },

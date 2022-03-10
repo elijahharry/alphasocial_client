@@ -1,7 +1,8 @@
 import { createTheme } from "@material-ui/core/styles";
+import { responsiveFontSizes } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 
-const AlphaTheme = createTheme({
+let AlphaTheme = createTheme({
   props: {
     MuiButton: {
       disableElevation: true,
@@ -40,11 +41,11 @@ const AlphaTheme = createTheme({
     fontFamily: "'Mulish', sans-serif",
     body1: {
       fontSize: "1.2rem",
-      lineHeight: "1.8rem",
+      lineHeight: 1.6,
     },
     body2: {
       fontSize: "1rem",
-      lineHeight: "1.6rem",
+      lineHeight: 1.3,
     },
     h2: {
       fontWeight: 900,
@@ -55,13 +56,13 @@ const AlphaTheme = createTheme({
     overline: {
       fontSize: "1.1rem",
       fontWeight: 700,
-      lineHeight: "1.4rem",
+      lineHeight: 1,
       letterSpacing: ".2rem",
     },
     button: {
       fontSize: ".95rem",
       fontWeight: 700,
-      lineHeight: "1.4rem",
+      lineHeight: 1,
       letterSpacing: ".15rem",
     },
   },
@@ -70,4 +71,8 @@ const AlphaTheme = createTheme({
   },
 });
 
-export default AlphaTheme;
+AlphaTheme.shadows[1] = "0px 1px 3px rgba(3, 0, 71, 0.09)";
+AlphaTheme.shadows[2] = "0px 4px 16px rgba(43, 52, 69, 0.1)";
+AlphaTheme.shadows[3] = "0px 8px 45px rgba(3, 0, 71, 0.09)";
+
+export default responsiveFontSizes(AlphaTheme);

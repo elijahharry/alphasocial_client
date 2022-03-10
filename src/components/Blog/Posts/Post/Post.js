@@ -92,19 +92,19 @@ const useStyles = makeStyles((theme) => ({
       flexBasis: "100%",
     },
     "& figure": {
-      boxShadow: theme.shadows[1],
+      boxShadow: theme.shadows[2],
       backgroundColor: "#fff",
       position: "relative",
       overflow: "hidden",
       borderRadius: 30,
       marginBlock: 0,
       marginInline: 0,
-      //   transition: "all 80ms",
+      transition: "all 80ms",
       //   border: `1px solid #d3d3d3`,
       "&:hover": {
         // boxShadow: theme.shadows[24],
-        boxShadow: theme.shadows[8],
-        transform: "scale(1.03)",
+        boxShadow: theme.shadows[3],
+        transform: "scale(1.01)",
         "& .new-badge": {
           transform: "scale(.2) !important",
         },

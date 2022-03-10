@@ -15,7 +15,7 @@ const BlogPost = ({ post }) => {
   } = post;
   const { firstName, lastName } = author?.node;
 
-  console.log(post);
+  console.log(author);
 
   return (
     <MainWrap
@@ -31,7 +31,7 @@ const BlogPost = ({ post }) => {
           { text: titleTrimmed, href: "#read" },
         ]}
       />
-      <Content content={content} handle={handle} />
+      <Content author={author?.node} content={content} handle={handle} />
     </MainWrap>
   );
 };

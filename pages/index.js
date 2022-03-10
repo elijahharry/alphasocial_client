@@ -1,5 +1,4 @@
 import * as api from "@lib/twitter";
-import axios from "axios";
 
 import MainWrap from "@component/MainWrap/MainWrap";
 import Feature from "@component/Feature/Feature";
@@ -7,15 +6,16 @@ import Tweets from "@component/Tweets/Tweets";
 import CaseStudies from "@component/CaseStudies/CaseStudies";
 import CTA from "@component/CTA/CTA";
 
-import { Container } from "@material-ui/core";
-
 export default function Index({ tweets, accounts }) {
   return (
     <MainWrap>
       <Feature
-        overline="Social pioneers of finance"
-        title="Let's Build <span>Your Audience</span>"
-        desc=""
+        overline="Investing and entrepreneurship brand builders"
+        title={
+          <>
+            We Build <span>Content Businesses</span>
+          </>
+        }
         media={{
           background: {
             src: "socialmedia-people.jpg",
@@ -34,16 +34,19 @@ export default function Index({ tweets, accounts }) {
         button2={{ link: "/contact", text: "Contact" }}
       />
       <CTA
-        text="No other agency with more experience creating humorous and informative finance content."
+        text="We work as equity partners or consultants to build powerful content-powered businesses."
         link="#creds"
         remove_at={1050}
       />
       <Feature
-        media={{}}
         color="primary"
         overline="Company overview"
-        title="What <span>We Do</span>"
-        desc="Finance branding doesn't have to be boring. We work with financial service companies to <strong>incorporate humor</strong> and <strong>pertinent market information</strong> into their social media accounts, helping to build an engaged following."
+        title={
+          <>
+            What <span>We Do</span>
+          </>
+        }
+        desc="We acquire stakes in businesses that could benefit from a content strategy, build out the content engine, and then hold the companies for the long-term."
         // border="bottom"
         flipped={true}
         media={{ float: "people-on-phones.png" }}
@@ -78,19 +81,27 @@ export default function Index({ tweets, accounts }) {
           ],
         }}
         color="secondary"
-        overline="Unmatched in experience"
-        title="Our <span>Credentials</span>"
-        desc="Between the top 6 accounts we've built from the ground up, we surpass over <strong>150 million impressions</strong> per month. Millions of people, who could have their <strong>eyes on your brand</strong>."
+        overline="Our success stories"
+        title={
+          <>
+            Our <span>Portfolio</span>
+          </>
+        }
+        desc="We’re building several content businesses, from newsletters to SaaS businesses. Interested in pitching us on an idea? Fill out the contact form below."
         overlay={{ color: "grey", opacity: 1 }}
         shadow={true}
         id="creds"
-        button1={{ link: "#tweets", text: "View tweets" }}
+        button1={{ link: "/contact", text: "Contact us" }}
       />
       <CaseStudies />
       <Feature
         color="secondary"
         overline="What we help with"
-        title="Our <span>Specialties</span>"
+        title={
+          <>
+            Our <span>Specialties</span>
+          </>
+        }
         desc="Branding, memes with viral potential, hysterical content & more. We're experts at all things that encompass building an audience within the finance space."
         overlay={{ color: "grey", opacity: 1 }}
         flipped={true}
@@ -106,8 +117,11 @@ export default function Index({ tweets, accounts }) {
 
 export async function getStaticProps() {
   const { tweets: tweets, accounts: accounts } = await api.getTopTweets();
+  // const tweets = [];
+  // const accounts = [];
+
   return {
     revalidate: 30,
-    props: { tweets: tweets, accounts: accounts },
+    props: { tweets: tweets ? tweets : [], accounts: accounts ? accounts : [] },
   };
 }

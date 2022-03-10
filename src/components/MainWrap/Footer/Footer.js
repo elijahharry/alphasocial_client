@@ -8,7 +8,7 @@ const Footer = () => {
   const [date, setDate] = useState(new Date().getFullYear());
 
   return (
-    <footer className={classes.footer}>
+    <footer id="footer" className={classes.footer}>
       <Container maxWidth="lg" className={classes.container}>
         <img src="/img/logo.svg" className={classes.logo} />
         <Typography variant="body2">

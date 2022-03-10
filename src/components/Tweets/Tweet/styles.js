@@ -49,25 +49,40 @@ export default makeStyles((theme) => ({
       width: 30,
     },
   },
-  tweet_pic: {
+  pic_ctn: {
     margin: `${theme.spacing(0.5)}px 0`,
     width: "100%",
-    height: 250,
+    height: 300,
     position: "relative",
     borderRadius: 10,
     overflow: "hidden",
     border: `1px solid #D3D3D3`,
     cursor: "zoom-in",
-    "& div": {
-      width: "100% !important",
-      height: "100% !important",
-    },
-    "& img": {
-      zIndex: 0,
-    },
     [theme.breakpoints.down("xs")]: {
       height: 180,
     },
+  },
+  pic_src: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "top center",
+    zIndex: 1,
+    // opacity: 0,
+  },
+  pic_blur: {
+    display: "block",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 0,
+    filter: "blur(50px) saturate(250%)",
+    transform: "scale(1.1)",
   },
   profile_link: {
     color: theme.palette.text.primary,
@@ -154,11 +169,6 @@ export default makeStyles((theme) => ({
   },
   likes_retweets: {
     display: "flex",
-  },
-  pic_img: {
-    backdropFilter: "blur(40px)",
-    position: "relative",
-    zIndex: 1,
   },
   default_img: {
     objectFit: "cover",

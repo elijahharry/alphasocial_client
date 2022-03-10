@@ -25,10 +25,16 @@ export default makeStyles((theme) => ({
     marginRight: theme.spacing(4) * -1,
   },
   link: {
-    fontSize: "1.1rem",
+    // fontSize: "1.1rem",
     height: 100,
     borderRadius: 0,
     padding: `0px ${theme.spacing(2)}px`,
+    "& span": {
+      ...theme.typography.body2,
+      textTransform: "none",
+      fontWeight: 700,
+      letterSpacing: 1,
+    },
   },
   link_primary: {
     color: theme.palette.primary.main,

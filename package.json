@@ -15,6 +15,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "^4.3.1",
     "react-player": "^2.9.0",
     "react-useinterval": "^1.0.2",
     "sharp": "^0.29.1",

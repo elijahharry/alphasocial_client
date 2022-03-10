@@ -29,20 +29,20 @@ const CaseStudies = () => {
           align="center"
           className={`${colors.underline_primary} ${classes.text}`}
         >
-          Client <span>Success</span>
+          <span>Success</span> Stories
         </Typography>
         <Typography
           variant="body1"
           align="center"
           className={`${classes.text} ${classes.desc} ${colors.span_primary}`}
         >
-          We find the <strong>right voice and style</strong> for our clients,
+          We find the <strong>right voice and style</strong> for our brands,
           then work to build them a
           <strong>
             <span> loyal, engaged fanbase</span>
           </strong>
-          . All of our clients normally see considerable results within the
-          first month.
+          . All of our brands normally see considerable results within the first
+          month.
         </Typography>
         <Grid
           container
@@ -126,7 +126,7 @@ const CaseStudies = () => {
                     Case study B
                   </Typography>
                   <Typography variant="h4" className={`${classes.title}`}>
-                    <span>Finance Newsletter</span>
+                    <span>Alpha Letter</span>
                   </Typography>
                 </div>
                 <div className={`backdrop ${classes.img_overlay}`}>

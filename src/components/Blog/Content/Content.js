@@ -1,14 +1,19 @@
+import Author from "./Author/Author";
+
 import { Container, makeStyles } from "@material-ui/core";
 
-const Content = ({ content, handle }) => {
+const Content = ({ content, handle, author }) => {
   const classes = useStyles();
   return (
     <article key={`${handle}-articles`} id="read" className={classes.article}>
       <Container maxWidth="lg" className={classes.container}>
-        <div
-          className={classes.content}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <div className={classes.paper}>
+          <div
+            className={classes.content}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </div>
+        {author && <Author author={author} />}
       </Container>
     </article>
   );
@@ -19,19 +24,19 @@ export default Content;
 const useStyles = makeStyles((theme) => ({
   article: {
     position: "relative",
-    backgroundColor: theme.palette.primary.offwhite,
+    // backgroundColor: theme.palette.primary.offwhite,
+    backgroundColor: "rgba(0,0,0,.03)",
+    marginBottom: theme.spacing(4) * -1,
   },
-  content: {
+  paper: {
     backgroundColor: "#fff",
     padding: `${theme.spacing(3)}px ${theme.spacing(4)}px`,
     width: `calc(100% + ${theme.spacing(4)}px)`,
     position: "relative",
-    left: theme.spacing(4) * -1,
-    top: theme.spacing(14) * -1,
     borderRadius: 20,
-    boxShadow: theme.shadows[4],
+    boxShadow: theme.shadows[2],
   },
-  container: {
+  content: {
     "& p": {
       ...theme.typography.body1,
       margin: `${theme.spacing(0.8)}px 0`,
@@ -77,5 +82,9 @@ const useStyles = makeStyles((theme) => ({
       height: "auto",
       maxHeight: 500,
     },
+  },
+  container: {
+    top: theme.spacing(14) * -1,
+    position: "relative",
   },
 }));

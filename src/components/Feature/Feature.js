@@ -106,7 +106,7 @@ const Feature = ({
               variant={top ? "h2" : "h3"}
               className={`${classes.text} ${underlineClass}`}
             >
-              {parse(title)}
+              {title}
             </Typography>
             <Typography
               variant="body1"

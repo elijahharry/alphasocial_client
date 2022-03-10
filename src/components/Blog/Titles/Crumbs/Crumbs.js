@@ -60,12 +60,20 @@ const useStyles = makeStyles((theme) => ({
     color: "inherit",
   },
   default: {
-    color: "inherit",
+    "& a": {
+      color: "inherit",
+    },
   },
   selected_light: {
-    color: theme.palette.primary.main,
+    pointerEvents: "none",
+    "& a": {
+      color: theme.palette.primary.main,
+    },
   },
   selected_dark: {
-    color: theme.palette.secondary.light,
+    pointerEvents: "none",
+    "& a": {
+      color: theme.palette.secondary.light,
+    },
   },
 }));
