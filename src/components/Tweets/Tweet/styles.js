@@ -2,12 +2,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   tweet_holder: {
-    flexBasis: "50%",
+    // flexBasis: "50%",
+    padding: theme.spacing(1.25),
   },
   tweet: {
     backgroundColor: "#fff",
-    padding: theme.spacing(1),
-    margin: `${theme.spacing(2)}px ${theme.spacing()}px`,
+    padding: theme.spacing(1.5),
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
@@ -116,16 +116,18 @@ export default makeStyles((theme) => ({
   },
   tweet_stats__item: {
     marginTop: theme.spacing(0.5),
-    marginRight: theme.spacing(4),
+    marginRight: theme.spacing(2),
     display: "flex",
-    "& svg": {
+    "& .ico": {
       marginRight: theme.spacing(0.75),
-      width: "1.6rem",
-      height: "1.6rem",
+      // width: "1.6rem",
+      // height: "1.6rem",
+      fontSize: "1.1rem",
       marginTop: 2,
     },
     "& p": {
-      marginTop: theme.spacing(0.1),
+      marginTop: theme.spacing(0.2),
+      fontSize: ".9rem",
     },
   },
   url_title: {

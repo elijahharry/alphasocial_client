@@ -27,19 +27,19 @@ export default makeStyles((theme) => ({
       position: "relative",
     },
   },
-  tweets_desktop: {
+  tweets: {
+    display: "flex",
     position: "relative",
+    alignItems: "flex-start",
     zIndex: 1,
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
-  tweets_mobile: {
-    position: "relative",
-    zIndex: 1,
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
+  column: {
+    flexBasis: "50%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
+    flexGrow: 1.1,
   },
   top_menu: {
     position: "relative",

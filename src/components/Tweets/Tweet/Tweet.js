@@ -12,7 +12,7 @@ import ImgZoom from "./ImgZoom/ImgZoom";
 import Retweet from "@component/Svgs/Retweet";
 import Twitter from "@material-ui/icons/Twitter";
 
-const Tweet = ({ tweet, even }) => {
+const Tweet = ({ tweet, even, i, col }) => {
   const screen = useScreenSize();
   const classes = useStyles();
   const [loaded, setLoaded] = useState({ avatar: false, media: false });
@@ -33,7 +33,11 @@ const Tweet = ({ tweet, even }) => {
 
   return (
     <>
-      <div className={classes.tweet_holder} key={tweet?.id + "-tweet-content"}>
+      <div
+        id={`tweet-${i}-${col}`}
+        className={classes.tweet_holder}
+        key={tweet?.id + "-tweet-content"}
+      >
         <div
           className={`${classes.tweet} ${
             even ? classes.border_primary : classes.border_secondary
@@ -95,17 +99,20 @@ const Tweet = ({ tweet, even }) => {
             <div className={classes.tweet_stats}>
               <div className={classes.likes_retweets}>
                 <div className={classes.tweet_stats__item}>
-                  <FavoriteIcon color={even ? "primary" : "secondary"} />
-                  <Typography variant="body1">{tweet.favorites}</Typography>
+                  <FavoriteIcon
+                    color={even ? "primary" : "secondary"}
+                    className="ico"
+                  />
+                  <Typography variant="body2">{tweet.favorites}</Typography>
                 </div>
                 <div className={classes.tweet_stats__item}>
                   <SvgIcon
                     color={!even ? "primary" : "secondary"}
-                    className={classes.retweet_icon}
+                    className="ico"
                   >
                     <Retweet />
                   </SvgIcon>
-                  <Typography variant="body1">{tweet.retweets}</Typography>
+                  <Typography variant="body2">{tweet.retweets}</Typography>
                 </div>
               </div>
               <Button
