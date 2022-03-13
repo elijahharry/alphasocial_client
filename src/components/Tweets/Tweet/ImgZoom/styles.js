@@ -17,6 +17,15 @@ export default makeStyles((theme) => ({
     position: "relative",
     height: "70%",
     width: "70%",
+    "& img": {
+      position: "absolute",
+      objectFit: "contain",
+      objectPosition: "center",
+      width: "100%",
+      height: "100%",
+      top: 0,
+      left: 0,
+    },
     [theme.breakpoints.down("sm")]: {
       width: "90%",
       height: "90%",

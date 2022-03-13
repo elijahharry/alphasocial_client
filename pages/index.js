@@ -121,7 +121,7 @@ export async function getStaticProps() {
   // const accounts = [];
 
   return {
-    revalidate: 30,
+    revalidate: 600,
     props: { tweets: tweets ? tweets : [], accounts: accounts ? accounts : [] },
   };
 }

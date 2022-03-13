@@ -36,12 +36,7 @@ const ImgZoom = ({ show, img, setShow }) => {
           onClick={() => setShow(false)}
         >
           <div className={classes.img}>
-            <Image
-              src={img}
-              layout="fill"
-              objectFit="contain"
-              objectPosition="center"
-            />
+            <img src={img} />
           </div>
         </motion.section>
       )}
